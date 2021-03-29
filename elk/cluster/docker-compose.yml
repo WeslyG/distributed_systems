@@ -7,7 +7,6 @@ services:
       - 9200:9200
       - 9600:9300
     environment:
-      # - discovery.type=single-node
       - node.name=es01
       - cluster.name=es-docker-cluster
       - discovery.seed_hosts=es02,es03
@@ -51,19 +50,6 @@ services:
     image: lmenezes/cerebro
     ports:
       - 9090:9000
-    links:
-      - es01
-    depends_on:
-      - es01
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:7.11.2
-    ports:
-      - 5601:5601
-    environment:
-      ELASTICSEARCH_URL: http://es01:9200
-    volumes:
-      - ./kibana.yml:/usr/share/kibana/config/kibana.yml
     links:
       - es01
     depends_on:
