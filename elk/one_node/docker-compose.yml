@@ -1,6 +1,7 @@
 version: "2"
 
 services:
+  # ================= virual vm 01
   es01:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.2
     ports:
@@ -17,6 +18,7 @@ services:
         soft: -1
         hard: -1
 
+  # ================= virual vm 02
   cerebro:
     image: lmenezes/cerebro
     ports:
