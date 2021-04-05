@@ -23,18 +23,21 @@ curl -XPUT 'http://localhost:9200/students/' \
 
 ### Изменить количество индексов в индексе
 
-```
+````
 curl -XPUT 'http://localhost:9200/students/_settings' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "settings" : {
         "number_of_replicas" : 2
     }
-}'
-```
+d```
 
 ### Пнуть индексы если они зависли
 
+````
+
+curl -XPOST localhost:9200/\_cluster/reroute?retry_failed
+
 ```
-curl -XPOST localhost:9200/_cluster/reroute?retry_failed
+
 ```
