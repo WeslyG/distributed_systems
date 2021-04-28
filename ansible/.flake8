@@ -1,0 +1,6 @@
+[flake8]
+; https://pycodestyle.readthedocs.io/en/latest/intro.html#error-codes
+; ignore = E226,E302,E41
+max-line-length = 200
+exclude = .venv
+max-complexity = 10
