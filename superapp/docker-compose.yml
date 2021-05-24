@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  app:
+    image: qwe
+    environment:
+      HOST: '46.163.163.75'
+    ports:
+      - 3000:3000

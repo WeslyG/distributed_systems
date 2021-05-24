@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  labels:
+    app: superapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: superapp
+  template:
+    metadata:
+      labels:
+        app: superapp
+    spec:
+      containers:
+        - name: superapp
+          image: weslyg/superapp
+          ports:
+            - containerPort: 3000
+          env:
+            - name: HOST
+              value: '46.163.163.75'
